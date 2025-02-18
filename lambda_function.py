@@ -6,7 +6,7 @@ from datetime import datetime
 class JSONFormatter(logging.Formatter):
     def format(self, record):
         log_message = {
-            'injected_request_id': getattr(record, 'request_id', None) 
+            'injected_request_id': getattr(record, 'request_id', None), 
             'message': record.getMessage()
         }
         return json.dumps(log_message)
